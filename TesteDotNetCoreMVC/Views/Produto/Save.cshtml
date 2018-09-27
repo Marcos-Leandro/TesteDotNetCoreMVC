@@ -1,0 +1,24 @@
+﻿@model TesteDotNetCoreMVC.Models.Produto
+@{
+    ViewData["Title"] = "Save";
+}
+
+<h2>Save</h2>
+
+<form asp-controller="Produto" asp-action="Save" method="post">
+    Id: <input asp-for="Id" />
+    <span asp-validation-for="Id"></span>
+    <br>
+    Nome: <input asp-for="Nome" />
+    <span asp-validation-for="Nome"></span>
+    <br>
+    Preco: <input asp-for="Preco" />
+    <span asp-validation-for="Preco"></span>
+    <br>
+    <input type="submit" />
+</form>
+
+@if (ViewBag.Validacao != null)
+{
+    <span>@ViewBag.Validacao</span>
+}

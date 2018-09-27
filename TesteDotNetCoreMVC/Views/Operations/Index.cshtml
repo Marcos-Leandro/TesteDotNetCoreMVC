@@ -1,0 +1,20 @@
+﻿@{
+    var services = (TesteDotNetCoreMVC.Services.OperationService)ViewBag.Service;
+}
+@{
+ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<h3>Object Controller</h3>
+<p>@ViewBag.Transient</p>
+<p>@ViewBag.Scoped</p>
+<p>@ViewBag.Singleton</p>
+
+<hr>
+
+<h3>Object Service</h3>
+<p>@services.TransientOperation.OperationId</p>
+<p>@services.ScopedOperation.OperationId</p>
+<p>@services.SingletonOperation.OperationId</p>

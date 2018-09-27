@@ -1,0 +1,25 @@
+﻿@model TesteDotNetCoreMVC.Models.Categoria
+@{
+    var categorias = (List<TesteDotNetCoreMVC.Models.Categoria>)ViewBag.Categorias;
+}
+@{
+    ViewData["Title"] = "Categoria Index";
+}
+
+<h2>Index</h2>
+
+<form asp-controller="Categoria" asp-action="Inserir" method="post">
+    <input type="hidden" asp-for="Id" />
+    Nome: <input asp-for="Nome" />
+    <span asp-validation-for="Nome"></span>
+    <br>
+    <button type="submit">Salvar</button>
+</form>
+
+<ul>
+    @foreach (var item in categorias)
+    {
+        <li>@item.Nome - <a href="/Categoria/Index/@item.Id">Editar</a> - <a href="/Categoria/Delete/@item.Id">Remove</a></li>
+
+    }
+</ul>
